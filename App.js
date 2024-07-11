@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import ComingSoon from "./src/Navigation/ComingSoon/ComingSoon";
+import { useFonts } from "expo-font";
 
 export default function App() {
+  const [loaded, error] = useFonts({
+    "Amiri-Regular": require("./assets/fonts/Amiri/Amiri-Regular.ttf"),
+    "Amiri-Bold": require("./assets/fonts/Amiri/Amiri-Bold.ttf"),
+    "Amiri-BoldItalic": require("./assets/fonts/Amiri/Amiri-BoldItalic.ttf"),
+    "Amiri-Italic": require("./assets/fonts/Amiri/Amiri-Italic.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView
+      style={{
+        flex: 1,
+      }}
+    >
+      <NavigationContainer>
+        <ComingSoon />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
