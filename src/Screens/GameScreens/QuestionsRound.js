@@ -57,7 +57,11 @@ const QuestionsRound = () => {
           />
         </>
       ) : (
-        navigation.navigate(NAVIGATION.GAMESCREEN.ASKORVOTE)
+        <NextButton
+          onPressAction={() =>
+            navigation.navigate(NAVIGATION.GAMESCREEN.ASKORVOTE)
+          }
+        />
       )}
     </View>
   );

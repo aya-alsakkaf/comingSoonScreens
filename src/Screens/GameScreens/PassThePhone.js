@@ -9,7 +9,7 @@ import { getRandomIndex, shuffleArray } from "../../gameData/utils";
 import GiveTo from "../../Components/GiveTo";
 import InOrOut from "./InOrOut";
 
-const PassThePhone = ({ name }) => {
+const PassThePhone = () => {
   const [players, setPlayers] = useContext(PlayersContext);
   const [game, setGame] = useContext(GameDataContext);
   const [theInformationPlayer, setTheInformationPlayer] = useState([]);

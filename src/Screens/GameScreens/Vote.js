@@ -51,7 +51,16 @@ const Vote = () => {
                   return (
                     <PeopleButton
                       name={p}
-                      onPressAction={() => setCounter(counter + 1)}
+                      onPressAction={() => {
+                        setGame({
+                          ...game,
+                          players: [
+                            ...game.players,
+                            { name: votePlayers[counter], votedOn: p },
+                          ],
+                        });
+                        setCounter(counter + 1);
+                      }}
                     />
                   );
                 }

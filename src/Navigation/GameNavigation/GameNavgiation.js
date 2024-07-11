@@ -29,7 +29,9 @@ const GameNavgiation = () => {
         headerShadowVisible: false,
         headerShown: false,
       }}
+      initialRouteName={NAVIGATION.GAMESCREEN.HOME}
     >
+      <Stack.Screen name={NAVIGATION.GAMESCREEN.RESULTS} component={Results} />
       <Stack.Screen name={NAVIGATION.GAMESCREEN.HOME} component={HomeScreen} />
       <Stack.Screen name={NAVIGATION.COMINGSOON.SCREEN1} component={Screen1} />
       <Stack.Screen name={NAVIGATION.COMINGSOON.SCREEN2} component={Screen2} />
@@ -53,6 +55,7 @@ const GameNavgiation = () => {
         name={NAVIGATION.GAMESCREEN.FINDOUTINOROUT}
         component={InOrOut}
       />
+
       <Stack.Screen name={NAVIGATION.GAMESCREEN.VOTE2} component={Vote2} />
       <Stack.Screen
         name={NAVIGATION.GAMESCREEN.PREQUESTIONSROUND}
@@ -66,7 +69,6 @@ const GameNavgiation = () => {
         name={NAVIGATION.GAMESCREEN.ASKORVOTE}
         component={AskOrVote}
       />
-      <Stack.Screen name={NAVIGATION.GAMESCREEN.RESULTS} component={Results} />
       <Stack.Screen name={NAVIGATION.GAMESCREEN.VOTE} component={Vote} />
     </Stack.Navigator>
   );
