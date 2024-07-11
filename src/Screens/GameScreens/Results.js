@@ -5,6 +5,7 @@ import NextButton from "../../Components/NextButton";
 import PeopleButton from "../../Components/PeopleButton";
 import { useNavigation } from "@react-navigation/native";
 import { NAVIGATION } from "../../Navigation/Index";
+import categories from "../../gameData";
 
 const Results = () => {
   const [game, setGame] = useContext(GameDataContext);
@@ -96,7 +97,17 @@ const Results = () => {
       </View>
       <PeopleButton
         name={"العب مرة ثانية"}
-        onPressAction={() => navigation.navigate(NAVIGATION.GAMESCREEN.HOME)}
+        onPressAction={() => {
+          navigation.navigate(NAVIGATION.GAMESCREEN.HOME);
+          setGame({
+            categories: categories,
+            category: "",
+            topic: "",
+            players: [],
+            out: "",
+            outTopic: "",
+          });
+        }}
       />
     </View>
   );

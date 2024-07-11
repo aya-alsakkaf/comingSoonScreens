@@ -8,6 +8,7 @@ import GameDataContext from "../../Context/GameDataContext";
 import { getRandomIndex, shuffleArray } from "../../gameData/utils";
 import GiveTo from "../../Components/GiveTo";
 import InOrOut from "./InOrOut";
+import AskOrVote from "./AskOrVote";
 
 const PassThePhone = () => {
   const [players, setPlayers] = useContext(PlayersContext);
@@ -56,20 +57,7 @@ const PassThePhone = () => {
           )}
         </>
       ) : (
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: "white",
-            alignItems: "center",
-            justifyContent: "space-around",
-          }}
-        >
-          <NextButton
-            onPressAction={() =>
-              navigation.navigate(NAVIGATION.GAMESCREEN.PREQUESTIONSROUND)
-            }
-          />
-        </View>
+        <AskOrVote />
       )}
     </View>
   );
