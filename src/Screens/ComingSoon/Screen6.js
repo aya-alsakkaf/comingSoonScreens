@@ -1,7 +1,11 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
+import NextButton from "../../Components/NextButton";
+import { useNavigation } from "@react-navigation/native";
+import { NAVIGATION } from "../../Navigation/Index";
 
 const Screen6 = () => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -36,6 +40,13 @@ const Screen6 = () => {
           width: 318,
           height: 318,
         }}
+      />
+
+      <NextButton
+        home={true}
+        onPressAction={() =>
+          navigation.navigate(NAVIGATION.GAMESCREEN.CATEGORIES)
+        }
       />
     </View>
   );
