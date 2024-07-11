@@ -26,9 +26,7 @@ const EnterPlayers = () => {
         backgroundColor: "white",
         flex: 1,
         padding: 10,
-        alignItems: "center",
         gap: 20,
-        justifyContent: "space-around",
       }}
     >
       <Text
@@ -76,39 +74,46 @@ const EnterPlayers = () => {
         })}
       </ScrollView>
 
-      <Pressable
+      <View
         style={{
-          backgroundColor: "#177E86",
-          width: 200,
-          height: 74,
-          borderRadius: 21,
-          justifyContent: "center",
           alignItems: "center",
-        }}
-        onPress={() => {
-          setPlayersInput([
-            ...playersInput,
-            "لاعب " + (playersInput.length + 1),
-          ]);
+          gap: 10,
         }}
       >
-        <Text
+        <Pressable
           style={{
-            fontSize: 30,
-            color: "white",
-            fontFamily: "Amiri-Bold",
+            backgroundColor: "#177E86",
+            width: 200,
+            height: 74,
+            borderRadius: 21,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          onPress={() => {
+            setPlayersInput([
+              ...playersInput,
+              "لاعب " + (playersInput.length + 1),
+            ]);
           }}
         >
-          اضف لاعب
-        </Text>
-      </Pressable>
+          <Text
+            style={{
+              fontSize: 30,
+              color: "white",
+              fontFamily: "Amiri-Bold",
+            }}
+          >
+            اضف لاعب
+          </Text>
+        </Pressable>
 
-      <NextButton
-        onPressAction={() => {
-          setPlayers(playersInput);
-          navigation.navigate(NAVIGATION.GAMESCREEN.PASSTHEPHONE);
-        }}
-      />
+        <NextButton
+          onPressAction={() => {
+            setPlayers(playersInput);
+            navigation.navigate(NAVIGATION.GAMESCREEN.PASSTHEPHONE);
+          }}
+        />
+      </View>
     </View>
   );
 };
