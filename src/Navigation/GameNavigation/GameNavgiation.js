@@ -18,6 +18,7 @@ import HomeScreen from "../../Screens/HomeScreen";
 import Categories from "../../Screens/GameScreens/Categories";
 import EnterPlayers from "../../Screens/GameScreens/EnterPlayers";
 import Vote2 from "../../Screens/GameScreens/Vote2";
+import Results from "../../Screens/GameScreens/Results";
 
 const GameNavgiation = () => {
   const Stack = createNativeStackNavigator();
@@ -65,6 +66,7 @@ const GameNavgiation = () => {
         name={NAVIGATION.GAMESCREEN.ASKORVOTE}
         component={AskOrVote}
       />
+      <Stack.Screen name={NAVIGATION.GAMESCREEN.RESULTS} component={Results} />
       <Stack.Screen name={NAVIGATION.GAMESCREEN.VOTE} component={Vote} />
     </Stack.Navigator>
   );

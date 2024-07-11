@@ -4,6 +4,8 @@ import PlayersContext from "../../Context/PlayersContext";
 import { shuffleArray } from "../../gameData/utils";
 import GameDataContext from "../../Context/GameDataContext";
 import PeopleButton from "../../Components/PeopleButton";
+import { NAVIGATION } from "../../Navigation/Index";
+import { useNavigation } from "@react-navigation/native";
 
 const Vote2 = ({ route }) => {
   const { out } = route.params;
@@ -12,6 +14,7 @@ const Vote2 = ({ route }) => {
   const [votePlayers, setVotePlayers] = useState(shuffleArray(players) || []);
   const [counter, setCounter] = useState(0);
   const [show, setShow] = useState(false);
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -38,9 +41,9 @@ const Vote2 = ({ route }) => {
           return (
             <PeopleButton
               name={t}
-              onPress={() => {
-                setGame({ ...game, braTopic: t });
-                navigation.navigate(SCREENS.RESULTS);
+              onPressAction={() => {
+                setGame({ ...game, outTopic: t });
+                navigation.navigate(NAVIGATION.GAMESCREEN.RESULTS);
               }}
             />
           );

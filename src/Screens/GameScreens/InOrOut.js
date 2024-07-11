@@ -27,9 +27,9 @@ const InOrOut = ({ player, onPress }) => {
           fontFamily: "Amiri-Bold",
         }}
       >
-        {player.name || "آيه"}
+        {player.name}
       </Text>
-      {player.isOut ? (
+      {!player.isOut ? (
         <Text
           style={{
             fontSize: 30,

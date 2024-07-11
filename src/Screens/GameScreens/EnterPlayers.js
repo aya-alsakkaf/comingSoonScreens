@@ -16,9 +16,9 @@ const EnterPlayers = () => {
   const [players, setPlayers] = useContext(PlayersContext);
   const navigation = useNavigation();
   const [playersInput, setPlayersInput] = useState([
-    "اسم اللاعب",
-    "اسم اللاعب",
-    "اسم اللاعب",
+    "لاعب ١",
+    "لاعب ٢",
+    "لاعب ٣",
   ]);
   return (
     <View
@@ -55,7 +55,7 @@ const EnterPlayers = () => {
               }}
             >
               <TextInput
-                placeholder="اسم اللاعب"
+                placeholder={player}
                 style={{
                   width: 204,
                   height: 74,
@@ -86,8 +86,10 @@ const EnterPlayers = () => {
           alignItems: "center",
         }}
         onPress={() => {
-          setPlayersInput([...playersInput, "اسم اللاعب"]);
-          //   navigation.navigate(NAVIGATION.GAMESCREEN.PASSTHEPHONE);
+          setPlayersInput([
+            ...playersInput,
+            "لاعب " + (playersInput.length + 1),
+          ]);
         }}
       >
         <Text
