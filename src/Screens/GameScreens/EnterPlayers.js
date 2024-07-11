@@ -47,6 +47,7 @@ const EnterPlayers = () => {
         {playersInput.map((player, index) => {
           return (
             <View
+              key={index}
               style={{
                 alignItems: "center",
                 gap: 10,

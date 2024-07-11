@@ -11,6 +11,7 @@ const Categories = () => {
   const categoryList = game.categories.map((c, index) => {
     return (
       <Pressable
+        key={index}
         style={{
           backgroundColor: "#CA6453",
           width: 200,

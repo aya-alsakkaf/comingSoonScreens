@@ -50,6 +50,7 @@ const Vote = () => {
                 if (index != counter) {
                   return (
                     <PeopleButton
+                      key={index}
                       name={p}
                       onPressAction={() => {
                         setGame({

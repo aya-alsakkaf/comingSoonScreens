@@ -47,10 +47,11 @@ const AskOrVote = () => {
             {askingPlayer} اختار شخص تبغى تساله او اضغط على التالي اذا كنتم
             جاهزين للتصويت على اللي برا السالفة
           </Text>
-          {players.map((player) => {
+          {players.map((player, index) => {
             if (player != askingPlayer && player != theOneJustAsked)
               return (
                 <PeopleButton
+                  key={index}
                   name={player}
                   onPressAction={() => {
                     setTheOneJustAsked(askingPlayer);

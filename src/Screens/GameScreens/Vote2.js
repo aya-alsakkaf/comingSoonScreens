@@ -37,9 +37,10 @@ const Vote2 = ({ route }) => {
 
       {game.categories
         .find((c) => c.category == game.category)
-        .topics.map((t) => {
+        .topics.map((t, index) => {
           return (
             <PeopleButton
+              key={index}
               name={t}
               onPressAction={() => {
                 setGame({ ...game, outTopic: t });

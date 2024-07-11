@@ -10,17 +10,19 @@ import categories from "../../gameData";
 const Results = () => {
   const [game, setGame] = useContext(GameDataContext);
   useEffect(() => {
+    console.log("HELLO");
     setGame({
       ...game,
       players: game.players.map((p) => {
         p.score = 0;
-        if (p.votedOn == game.bra) {
-          if (game.topic != game.braTopic) {
+        console.log(Object.keys(game));
+        if (p.votedOn == game.out) {
+          if (game.topic != game.outTopic) {
             p.score = 100;
           }
         }
-        if (p.name == game.bra) {
-          if (game.braTopic == game.topic) {
+        if (p.name == game.out) {
+          if (game.outTopic == game.topic) {
             p.score = 200;
           }
         }
@@ -28,7 +30,7 @@ const Results = () => {
       }),
     });
   }, []);
-  console.log(game);
+  // console.log(game.players);
   const navigation = useNavigation();
   return (
     <View
@@ -57,9 +59,10 @@ const Results = () => {
           marginBottom: 30,
         }}
       >
-        {game.players.map((p) => {
+        {game.players.map((p, index) => {
           return (
             <View
+              key={index}
               style={{
                 flexDirection: "row",
                 justifyContent: "space-around",
